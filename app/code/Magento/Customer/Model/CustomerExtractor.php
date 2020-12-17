@@ -99,7 +99,7 @@ class CustomerExtractor
         
         if ($isGroupIdEmpty) {
             $customerDataObject->setGroupId(
-                $this->customerGroupManagement->getDefaultGroup($storeId)->getId()
+                $customerDataObject->getGroupId() ?? $this->customerGroupManagement->getDefaultGroup($storeId)->getId()
             );
         }
 
